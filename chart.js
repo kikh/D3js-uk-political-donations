@@ -21,7 +21,7 @@ var entityCentres = {
 		individual: {x: w / 3.65, y: h / 3.3},
 	};
 
-var fill = d3.scale.ordinal().range(["#FFFFFF", "#087FBD", "#FDBB30"]);
+var fill = d3.scale.ordinal().range(["#4EFF00", "#6C0000", "#41FDFF"]);
 
 var svgCentre = { 
     x: w / 3.6, y: h / 2
