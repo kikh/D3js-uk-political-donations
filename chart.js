@@ -359,8 +359,9 @@ function mouseout() {
 			.style("display", "none");
 		}
 
-function googlesearch(){
-	window.open('https://www.google.com/search?q=' + donor, '_blank');	
+function googlesearch(d, i){
+	var donor2 = d.donor;
+	window.open('https://www.google.com/search?q=' + donor2, '_blank');	
 }
 
 $(document).ready(function() {
