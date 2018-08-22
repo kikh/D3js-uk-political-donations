@@ -236,3 +236,7 @@ https://github.com/yui/pure/blob/master/LICENSE.md
     color: rgb(0, 120, 231);
     color: #fff
 }
+
+.scale{
+    font-size: 140%;
+}
