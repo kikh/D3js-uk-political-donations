@@ -240,3 +240,7 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 .scale{
    font-size: 120%; 
 }
+
+.node:hover{
+    cursor: pointer;
+}
