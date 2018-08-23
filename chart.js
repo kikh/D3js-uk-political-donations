@@ -316,7 +316,7 @@ function mouseover(d, i) {
 	var party = d.partyLabel;
 	var entity = d.entityLabel;
 	var offset = $("svg").offset();
-	responsiveVoice.speak(donor + amount);
+	responsiveVoice.speak(donor + " " + amount + "pounds");
 	
 
 
