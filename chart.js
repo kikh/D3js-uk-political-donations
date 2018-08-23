@@ -75,6 +75,7 @@ function transition(name) {
 		$("#view-source-type").fadeIn(1000);
 		return fundsType();
 	}
+}
 
 
 function start() {
