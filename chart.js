@@ -87,7 +87,7 @@ function transition(name) {
 		$("#pie-chart").fadeOut(250);
 		return amountsGroup();
 	}
-}
+};
 
 
 function start() {
