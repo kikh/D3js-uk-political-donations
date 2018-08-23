@@ -76,6 +76,17 @@ function transition(name) {
 		return fundsType();
 	}
 
+	if (name === "group-by-amount") {
+		$("#initial-content").fadeOut(250);
+		$("#value-scale").fadeOut(250);
+		$("#view-donor-type").fadeOut(250);
+		$("#view-party-type").fadeOut(250);
+		$("#view-source-type").fadeOut(250);
+		$("#view-amount").fadeIn(1000);
+        	$("#chart").fadeIn(1000);
+		return GroupAmounts();
+    }
+
 function start() {
 
 	node = nodeGroup.selectAll("circle")
@@ -104,6 +115,19 @@ function start() {
 			.on("tick", all)
 			.start();
 
+	
+		if (name === "group-by-amount") {
+	$("#initial-content").fadeOut(250);
+        $("#initial-content-pie").fadeOut(250);
+	$("#value-scale").fadeOut(250);
+	$("#view-donor-type").fadeOut(250);
+	$("#view-party-type").fadeOut(250);
+	$("#view-source-type").fadeOut(250);
+	$("#view-amount").fadeIn(1000);
+        $("#chart").fadeIn(1000);
+        $("#pie-chart").fadeOut(250);
+	return amountsGroup();
+    }
 		node.transition()
 			.duration(2500)
 			.attr("r", function(d) { return d.radius; });
@@ -171,6 +195,21 @@ function all(e) {
 
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
+}
+
+function amounts(e) {
+	node.each(moveToAmounts(e.alpha))
+	node.attr("cx", function(d) { return d.x; })
+		.attr("cy", function(d) {return d.y; });
+}
+
+function GroupAmounts() {
+	force.gravity(0)
+		.friction(0.8)
+		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
+		.on("tick", amounts)
+		.start()
+		.colourByParty();
 }
 
 
