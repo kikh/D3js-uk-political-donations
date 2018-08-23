@@ -124,7 +124,6 @@ function start() {
 }
 
 function total() {
-
 	force.gravity(0)
 		.friction(0.9)
 		.charge(function(d) { return -Math.pow(d.radius, 2) / 2.8; })
@@ -132,14 +131,14 @@ function total() {
 		.start();
 }
 
-//New function
-	function amountsGroup() {
-		force.gravity(0)
-			.friction(0.8)
-			.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
-			.on("tick", amounts)
-			.start()
-			.colourByParty();
+//this is the trick find me here on console.....
+function amountsGroup() {
+	force.gravity(0)
+		.friction(0.8)
+		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
+		.on("tick", amounts)
+		.start()
+		.colourByParty();
 }
 
 function partyGroup() {
@@ -198,6 +197,8 @@ function all(e) {
 }
 
 function amounts(e) {
+	.each(collide(0.001));
+	
 	node.each(moveToAmounts(e.alpha))
 	node.attr("cx", function(d) { return d.x; })
 		.attr("cy", function(d) {return d.y; });
