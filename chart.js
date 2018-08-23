@@ -76,16 +76,6 @@ function transition(name) {
 		return fundsType();
 	}
 
-	if (name === "group-by-amount") {
-		$("#initial-content").fadeOut(250);
-		$("#value-scale").fadeOut(250);
-		$("#view-donor-type").fadeOut(250);
-		$("#view-party-type").fadeOut(250);
-		$("#view-source-type").fadeOut(250);
-		$("#view-amount").fadeIn(1000);
-        	$("#chart").fadeIn(1000);
-		return GroupAmounts();
-    }
 
 function start() {
 
