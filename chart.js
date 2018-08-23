@@ -114,19 +114,6 @@ function start() {
 			.charge(function(d) { return -Math.pow(d.radius, 2) / 3; })
 			.on("tick", all)
 			.start();
-
-	
-		if (name === "group-by-amount") {
-	$("#initial-content").fadeOut(250);
-        $("#initial-content-pie").fadeOut(250);
-	$("#value-scale").fadeOut(250);
-	$("#view-donor-type").fadeOut(250);
-	$("#view-party-type").fadeOut(250);
-	$("#view-source-type").fadeOut(250);
-	$("#view-amount").fadeIn(1000);
-        $("#chart").fadeIn(1000);
-        $("#pie-chart").fadeOut(250);
-	return amountsGroup();
     }
 		node.transition()
 			.duration(2500)
