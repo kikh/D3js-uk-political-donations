@@ -132,13 +132,14 @@ function total() {
 		.start();
 }
 
-function partyGroup() {
-	force.gravity(0)
-		.friction(0.8)
-		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
-		.on("tick", parties)
-		.start()
-		.colourByParty();
+//New function
+	function amountsGroup() {
+		force.gravity(0)
+			.friction(0.8)
+			.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
+			.on("tick", amounts)
+			.start()
+			.colourByParty();
 }
 
 function partyGroup() {
