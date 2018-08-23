@@ -197,9 +197,8 @@ function all(e) {
 }
 
 function amounts(e) {
-	.each(collide(0.001));
-	
 	node.each(moveToAmounts(e.alpha))
+		.each(collide(0.001));
 	node.attr("cx", function(d) { return d.x; })
 		.attr("cy", function(d) {return d.y; });
 }
