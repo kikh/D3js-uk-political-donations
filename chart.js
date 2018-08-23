@@ -191,7 +191,6 @@ function types(e) {
 
 function all(e) {
 	node.each(moveToCentre(e.alpha))
-		.each(collide(0.001));
 
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
