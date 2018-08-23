@@ -351,6 +351,7 @@ function mouseover(d, i) {
 	}
 
 function mouseout() {
+	responsiveVoice.cancel();
 	// no more tooltips
 		var mosie = d3.select(this);
 
