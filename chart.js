@@ -75,6 +75,18 @@ function transition(name) {
 		$("#view-source-type").fadeIn(1000);
 		return fundsType();
 	}
+	if (name === "group-by-amount") {
+		$("#initial-content").fadeOut(250);
+		$("#initial-content-pie").fadeOut(250);
+		$("#value-scale").fadeOut(250);
+		$("#view-donor-type").fadeOut(250);
+		$("#view-party-type").fadeOut(250);
+		$("#view-source-type").fadeOut(250);
+		$("#view-amount").fadeIn(1000);
+		$("#chart").fadeIn(1000);
+		$("#pie-chart").fadeOut(250);
+		return amountsGroup();
+	}
 }
 
 
@@ -105,7 +117,7 @@ function start() {
 			.charge(function(d) { return -Math.pow(d.radius, 2) / 3; })
 			.on("tick", all)
 			.start();
-    }
+  
 		node.transition()
 			.duration(2500)
 			.attr("r", function(d) { return d.radius; });
@@ -118,6 +130,15 @@ function total() {
 		.charge(function(d) { return -Math.pow(d.radius, 2) / 2.8; })
 		.on("tick", all)
 		.start();
+}
+
+function partyGroup() {
+	force.gravity(0)
+		.friction(0.8)
+		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
+		.on("tick", parties)
+		.start()
+		.colourByParty();
 }
 
 function partyGroup() {
