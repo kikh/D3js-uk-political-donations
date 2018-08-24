@@ -452,4 +452,8 @@ function genScreenshot() {
     });
 }
 
+    $("..img-cont").mouseover(function(){
+      genScreenshot();
+   });
+
 
