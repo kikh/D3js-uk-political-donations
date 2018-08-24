@@ -1,4 +1,5 @@
 // GLOBALS
+var gnrtd = 0;
 var w = 1100,h = 1000;
 var padding = 2;
 var nodes = [];
@@ -447,8 +448,11 @@ function genScreenshot() {
 }
 
 $("#initial-content").mouseover(function(){
-	$(this).prepend('<img class="img-cont" src="">');
-	genScreenshot();
+	if (gnrtd == 0){
+		$(this).prepend('<img class="img-cont" src="">');
+		genScreenshot();
+		gnrtd = 1
+	}
 });
 
 
