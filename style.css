@@ -290,6 +290,6 @@ https://github.com/yui/pure/blob/master/LICENSE.md
     cursor: pointer;
 }
 
-span[class*='word']{
-    color: red;
+span[class*='word']:hover{
+    transform: scale(1.5);
 }
