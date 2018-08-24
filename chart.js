@@ -446,7 +446,7 @@ function genScreenshot() {
     	});
 }
 
-$(".img-cont").mouseover(function(){
+$("#initial-content").mouseover(function(){
 	$(this).append('<img class="img-cont" src="">');
 	genScreenshot();
 });
