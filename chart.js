@@ -1,7 +1,4 @@
 // GLOBALS
-var evt = new Event(),
-    m = new Magnifier(evt);
-var gnrtd = 0;
 var w = 1100,h = 1000;
 var padding = 2;
 var nodes = [];
@@ -430,38 +427,6 @@ $(document).ready(function() {
     });
     return d3.csv("data/7500up.csv", display);
 
-});
-
-function genScreenshot() {
-	html2canvas(document.querySelector("#initial-content")).then(canvas => {
-		document.body.appendChild(canvas);
-
-		if (navigator.userAgent.indexOf("MSIE ") > 0 || navigator.userAgent.match(/Trident.*rv\:11\./)) {
-			var blob = canvas.msToBlob();
-			window.navigator.msSaveBlob(blob,'Test file.png');
-		}
-		else {
-			$('.img-cont').attr('src', canvas.toDataURL("image/png"));
-			$('.img-cont').attr('download','Test file.png');
-        		$('.img-cont')[0].click();
-		}
-      
-    	});
-}
-
-$("#initial-content").mouseover(function(){
-	if (gnrtd == 0){
-		$(this).prepend('<img class="img-cont" src="">');
-		genScreenshot();
-		gnrtd = 1
-	}
-});
-
-m.attach({
-    thumb: '.img-cont',
-    mode: 'inside',
-    zoom: 3,
-    zoomable: true
 });
 
 
