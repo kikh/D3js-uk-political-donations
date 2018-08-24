@@ -291,7 +291,7 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 }
 
 span[class*='word']{
-    display: block;
+    display: inline-block;
 }
 
 span[class*='word']:hover{
