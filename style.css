@@ -289,3 +289,7 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 .node:hover{
     cursor: pointer;
 }
+
+span[class*='word']{
+    color: red;
+}
