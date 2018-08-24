@@ -429,9 +429,15 @@ $(document).ready(function() {
 
 });
 
-var words = $("p").text().split(" ");
-$("p").empty();
-$.each(words, function(i, v) {
-    $("p").append($('<span class="zoom">').text(v));
-});
+$.fn.wordify = function(){
+	this.find(":not(iframe,textarea)").addBack().contents().filter(function() {
+		return this.nodeType === 3;
+	}).each(function() {
+		var textnode = $(this);
+		var text = textnode.text();
+		text = text.replace(/([^\s-.,;:!?()[\]{}<>"]+)/g,'<span>$1</span>');
+		textnode.replaceWith(text);
+	});
+	return this;
+};
 
