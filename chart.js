@@ -429,4 +429,27 @@ $(document).ready(function() {
 
 });
 
+function genScreenshot() {
+    html2canvas(document.body, {
+      onrendered: function(canvas) {
+      $('.img-cont').html("");
+			$('.img-cont').append(canvas);
+      
+      if (navigator.userAgent.indexOf("MSIE ") > 0 || 
+					navigator.userAgent.match(/Trident.*rv\:11\./)) 
+			{
+      	var blob = canvas.msToBlob();
+        window.navigator.msSaveBlob(blob,'Test file.png');
+      }
+      else {
+        $('#initial-content').attr('href', canvas.toDataURL("image/png"));
+        $('#initial-content').attr('download','Test file.png');
+        $('#initial-content')[0].click();
+      }
+      
+      
+      }
+    });
+}
+
 
