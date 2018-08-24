@@ -430,7 +430,7 @@ $(document).ready(function() {
 });
 
 function genScreenshot() {
-	html2canvas(document.querySelector(".initial-cont")).then(canvas => {
+	html2canvas(document.querySelector(".img-cont")).then(canvas => {
 		document.body.appendChild(canvas);
 
 		if (navigator.userAgent.indexOf("MSIE ") > 0 || navigator.userAgent.match(/Trident.*rv\:11\./)) {
