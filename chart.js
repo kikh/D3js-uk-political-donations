@@ -430,6 +430,6 @@ $(document).ready(function() {
 });
 
 $("a, p, h1, h2, h3, h4, h5, strong").lettering('words');
-$('a, p, h1, h2, h3, h4, h5 strong').mouseover(function(event) {
+$('a, p, h1, h2, h3, h4, h5, strong').mouseover(function(event) {
     var word=event.target.innerHTML;
 });
