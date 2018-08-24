@@ -1,4 +1,6 @@
 // GLOBALS
+var evt = new Event(),
+    m = new Magnifier(evt);
 var gnrtd = 0;
 var w = 1100,h = 1000;
 var padding = 2;
@@ -453,6 +455,13 @@ $("#initial-content").mouseover(function(){
 		genScreenshot();
 		gnrtd = 1
 	}
+});
+
+m.attach({
+    thumb: '.img-cont',
+    mode: 'inside',
+    zoom: 3,
+    zoomable: true
 });
 
 
