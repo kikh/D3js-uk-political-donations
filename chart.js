@@ -430,7 +430,7 @@ $(document).ready(function() {
 });
 
 function genScreenshot() {
-	html2canvas(document.querySelector(".img-cont")).then(canvas => {
+	html2canvas(document.querySelector(".initial-cont")).then(canvas => {
 		document.body.appendChild(canvas);
 
 		if (navigator.userAgent.indexOf("MSIE ") > 0 || navigator.userAgent.match(/Trident.*rv\:11\./)) {
@@ -438,9 +438,7 @@ function genScreenshot() {
 			window.navigator.msSaveBlob(blob,'Test file.png');
 		}
 		else {
-			$('#initial-content').attr('href', canvas.toDataURL("image/png"));
-			$('#initial-content').attr('download','Test file.png');
-			$('#initial-content')[0].click();
+			$('.img-cont').attr('src', canvas.toDataURL("image/png"));
 		}
       
     	});
