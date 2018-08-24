@@ -432,5 +432,4 @@ $(document).ready(function() {
 $("p").lettering('words');
 $('p').mouseover(function(event) {
     var word=event.target.innerHTML;
-    word.wrap('<span class="zoom"></span> ');
 });
