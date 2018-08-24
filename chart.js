@@ -429,7 +429,8 @@ $(document).ready(function() {
 
 });
 
-var words = $("p").text().split(" ");
-$.each(words, function(i, v) {
-    $("p").append($("<span> ").text(v));
+$("p").lettering('words');
+$('p').mouseover(function(event) {
+    var word=event.target.innerHTML;
+    alert("hooray");
 });
