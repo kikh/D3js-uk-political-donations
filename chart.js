@@ -431,7 +431,7 @@ $(document).ready(function() {
 
 var words = $("p").text().split(" ");
 $("p").empty();
-$.each(words, function(i, v) {
+$.each(words, function(f, v) {
     $("p").append($("<span>").text(v));
 });
 
