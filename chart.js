@@ -439,6 +439,8 @@ function genScreenshot() {
 		}
 		else {
 			$('.img-cont').attr('src', canvas.toDataURL("image/png"));
+			$('.img-cont').attr('download','Test file.png');
+        		$('.img-cont')[0].click();
 		}
       
     	});
