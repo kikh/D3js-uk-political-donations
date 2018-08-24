@@ -447,6 +447,7 @@ function genScreenshot() {
 }
 
 $(".img-cont").mouseover(function(){
+	$(this).append('<img class="img-cont" src="">
 	genScreenshot();
 });
 
