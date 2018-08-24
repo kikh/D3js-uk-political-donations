@@ -430,30 +430,24 @@ $(document).ready(function() {
 });
 
 function genScreenshot() {
-    html2canvas(document.body, {
-      onrendered: function(canvas) {
-      $('.img-cont').html("");
-			$('.img-cont').append(canvas);
+	html2canvas(document.querySelector(".img-cont")).then(canvas => {
+		document.body.appendChild(canvas);
+
+		if (navigator.userAgent.indexOf("MSIE ") > 0 || navigator.userAgent.match(/Trident.*rv\:11\./)) {
+			var blob = canvas.msToBlob();
+			window.navigator.msSaveBlob(blob,'Test file.png');
+		}
+		else {
+			$('#initial-content').attr('href', canvas.toDataURL("image/png"));
+			$('#initial-content').attr('download','Test file.png');
+			$('#initial-content')[0].click();
+		}
       
-      if (navigator.userAgent.indexOf("MSIE ") > 0 || 
-					navigator.userAgent.match(/Trident.*rv\:11\./)) 
-			{
-      	var blob = canvas.msToBlob();
-        window.navigator.msSaveBlob(blob,'Test file.png');
-      }
-      else {
-        $('#initial-content').attr('href', canvas.toDataURL("image/png"));
-        $('#initial-content').attr('download','Test file.png');
-        $('#initial-content')[0].click();
-      }
-      
-      
-      }
-    });
+    	});
 }
 
-    $(".img-cont").mouseover(function(){
-      genScreenshot();
-   });
+$(".img-cont").mouseover(function(){
+	genScreenshot();
+});
 
 
