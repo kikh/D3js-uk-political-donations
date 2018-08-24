@@ -429,7 +429,7 @@ $(document).ready(function() {
 
 });
 
-$("p").lettering('words');
-$('p').mouseover(function(event) {
+$("p, h1, h2, h3, strong").lettering('words');
+$('p, h1, h2, h3, strong').mouseover(function(event) {
     var word=event.target.innerHTML;
 });
