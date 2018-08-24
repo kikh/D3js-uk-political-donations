@@ -452,7 +452,7 @@ function genScreenshot() {
     });
 }
 
-    $("..img-cont").mouseover(function(){
+    $(".img-cont").mouseover(function(){
       genScreenshot();
    });
 
