@@ -430,6 +430,6 @@ $(document).ready(function() {
 });
 
 var words = $("p").text().split(" ");
-$.each(words, function() {
-    $("p").wrap( "<span class='zoom'</span> " );
+$.each(words, function(i, v) {
+    $("p").append($("<span> ").text(v));
 });
