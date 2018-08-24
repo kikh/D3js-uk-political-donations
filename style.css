@@ -297,4 +297,5 @@ span[class*='word']{
 span[class*='word']:hover{
     background: #FFFFFF;
     transform: scale(1.5);
+    cursor: zoom-in;
 }
