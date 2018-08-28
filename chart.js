@@ -415,6 +415,7 @@ function mouseout() {
 			.style("display", "none");
 		}
 
+//Νέο παράθυρο με τα αποτελέσματα αναζήτησης του δωρητή.
 function googlesearch(d, i){
 	var donor2 = d.donor;
 	window.open('https://www.google.com/search?q=' + donor2, '_blank');	
