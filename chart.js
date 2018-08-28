@@ -370,6 +370,7 @@ function mouseover(d, i) {
 	var party = d.partyLabel;
 	var entity = d.entityLabel;
 	var offset = $("svg").offset();
+	//Ξεκινάει να λέει την ονομασία του δωρητη και το ποσό της δωρεάς
 	responsiveVoice.speak(donor + ".  " + amount + "pounds", "UK English Male");
 	
 
@@ -405,6 +406,7 @@ function mouseover(d, i) {
 	}
 
 function mouseout() {
+	//Σταματάει τη φωνή που λέει την ονομασία του δωρητη και το ποσό της δωρεάς
 	responsiveVoice.cancel();
 	// no more tooltips
 		var mosie = d3.select(this);
