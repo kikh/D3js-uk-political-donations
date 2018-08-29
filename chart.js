@@ -88,7 +88,7 @@ function transition(name) {
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
 		$("#amount-of-donation").fadeIn(1000);
-		return amountsGroup();
+		return GroupoByAmount();
 	}
 }
 
@@ -134,14 +134,13 @@ function total() {
 		.start();
 }
 
-//this is the trick find me here on console.....
-function amountsGroup() {
+//Κατηγοριοποίηση με βάση το ποσό της δωρεάς
+function GroupoByAmount() {
 	force.gravity(0)
 		.friction(0.8)
 		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
 		.on("tick", amounts)
-		.start()
-		.colourByParty();
+		.start();
 }
 
 function partyGroup() {
