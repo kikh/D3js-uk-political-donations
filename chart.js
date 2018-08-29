@@ -1,5 +1,5 @@
 // GLOBALS
-var w = 1100,h = 1000;
+var w = 1100,h = 1000; // εχω προσθέσει μερικά pixel
 var padding = 2;
 var nodes = [];
 var force, node, data, maxVal;
