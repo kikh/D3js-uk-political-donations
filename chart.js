@@ -80,6 +80,7 @@ function transition(name) {
 		$("#view-source-type").fadeIn(1000);
 		return fundsType();
 	}
+	////Κατηγοριοποίηση με βάση το ποσό της δωρεάς
 	if (name === "group-by-amount") {
 		$("#initial-content").fadeOut(250);
 		$("#initial-content-pie").fadeOut(250);
@@ -273,6 +274,7 @@ function moveToFunds(alpha) {
 	};
 }
 
+//Κατηγοριοποίηση με βάση το ποσό της δωρεάς
 function moveToAmounts(alpha) {
 	return function(d) {
 		var centreY = svgCentre.y;
@@ -431,6 +433,7 @@ $(document).ready(function() {
 
 });
 
+//Χρηση του lettering.js για τη δγμιουργία του εφέ του μεγενθυντικού φακού
 $("a, p, h1, h2, h3, h4, h5, strong").lettering('words');
 $('a, p, h1, h2, h3, h4, h5, strong').mouseover(function(event) {
     var word=event.target.innerHTML;
